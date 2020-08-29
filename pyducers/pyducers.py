@@ -1,7 +1,9 @@
 import functools
 
+
 def transduce(transducer, reduce_function, coll, initial_value=None):
     return functools.reduce(transducer(reduce_function), coll, initial_value)
+
 
 def pyducers_filter(f, coll=None):
     if coll:

@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pyducers-furiel", # Replace with your own username
+    name="pyducers-furiel",
     version="0.0.1",
     author="furiel",
     author_email="antal.nemes@gmail.com",
