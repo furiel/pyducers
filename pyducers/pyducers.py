@@ -28,7 +28,10 @@ def pyducers_filter(f, coll=None):
 
 def pyducers_map(f, *args):
     def transducer(rf):
-        pass
+        def map_reduce(acc, current):
+            return rf(acc, f(current))
+
+        return map_reduce
 
     if len(args) == 0:
         return transducer
