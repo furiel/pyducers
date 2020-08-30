@@ -2,11 +2,25 @@
 Transducer library for python, inspired by clojure
 
 ## Table of contents
+- [performance](#performance)
 - [map](#map)
 - [filter](#filter)
 - [compose](#compose)
 - [transduce](#transduce)
 - [sequence](#sequence)
+
+## performance
+
+The performance test sums all even numbers below 1000000.
+
+This library is very slow. Using tranducers, calculating that problem takes twice as much time compared to the version that uses a simple for loop, and filters inside the loop. And 50% slower to version that uses the builtin reduce and the filter iterator of the list.
+
+```sh
+$ python3 perftest.py
+time: 0.315	result 249999500000	algorithm: transduce with filter
+time: 0.170	result 249999500000	algorithm: with for loop
+time: 0.218	result 249999500000	algorithm: builtin reduce with prefiltered list
+```
 
 ## map
 ### syntax
