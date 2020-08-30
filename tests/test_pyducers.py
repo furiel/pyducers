@@ -57,3 +57,10 @@ def test_tranduce_compose_order():
 def test_sequence():
     assert [1, 2] == sequence([1, 2])
     assert_iter_eq([2, 4], sequence([1, 2, 3, 4], filter(evenp)))
+
+
+def test_transduce_default_value():
+    def identity(x):
+        return x
+
+    assert 6 == transduce(map(identity), add, [1, 2, 3])

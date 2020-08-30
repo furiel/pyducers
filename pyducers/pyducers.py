@@ -2,6 +2,8 @@ import functools
 
 
 def transduce(transducer, reduce_function, coll, initial_value=None):
+    if initial_value is None:
+        return functools.reduce(transducer(reduce_function), coll)
     return functools.reduce(transducer(reduce_function), coll, initial_value)
 
 
