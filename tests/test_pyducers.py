@@ -6,10 +6,10 @@ def assert_iter_eq(iter1, iter2):
 
 
 def test_filter():
-    def oddp(num):
+    def evenp(num):
         return num % 2 == 0
 
-    assert 6 == transduce(filter(oddp), lambda x, y: x+y, [1, 2, 3, 4], 0)
+    assert 6 == transduce(filter(evenp), lambda x, y: x+y, [1, 2, 3, 4], 0)
 
 
 def test_map():
