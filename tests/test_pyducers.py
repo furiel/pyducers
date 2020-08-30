@@ -64,3 +64,5 @@ def test_transduce_default_value():
         return x
 
     assert 6 == transduce(map(identity), add, [1, 2, 3])
+    assert 0 == transduce(filter(evenp), add, [1])
+    assert 6 == transduce(filter(evenp), add, [1, 2, 3, 4])
