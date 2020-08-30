@@ -24,3 +24,16 @@ def pyducers_filter(f, coll=None):
         return filter_reduce
 
     return transducer
+
+
+def pyducers_map(f, *args):
+    def transducer(rf):
+        pass
+
+    if len(args) == 0:
+        return transducer
+
+    if len(args) == 1:
+        return map(f, args[0])
+
+    return map(lambda x: f(*x), zip(*args))
