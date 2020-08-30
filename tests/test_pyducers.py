@@ -1,4 +1,4 @@
-from pyducers import filter, map, transduce, compose
+from pyducers import filter, map, transduce, compose, sequence
 
 
 def add(*args):
@@ -52,3 +52,8 @@ def test_tranduce_compose_order():
                            [1, 2, 3, 4], 0)
     assert 12 == transduce(compose(filter(evenp), map(two_times)), add,
                            [1, 2, 3, 4], 0)
+
+
+def test_sequence():
+    assert [1, 2] == sequence([1, 2])
+    assert_iter_eq([2, 4], sequence([1, 2, 3, 4], filter(evenp)))

@@ -5,6 +5,17 @@ def transduce(transducer, reduce_function, coll, initial_value=None):
     return functools.reduce(transducer(reduce_function), coll, initial_value)
 
 
+def sequence(coll, transducer=None):
+    if transducer is None:
+        return [x for x in coll]
+
+    def append(coll, current):
+        coll.append(current)
+        return coll
+
+    return transduce(transducer, append, coll, [])
+
+
 def pyducers_filter(f, coll=None):
     if coll:
         return filter(f, coll)
