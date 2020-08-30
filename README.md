@@ -1,6 +1,13 @@
 # pyducers
 Transducer library for python, inspired by clojure
 
+## Table of contents
+- [map](#map)
+- [filter](#filter)
+- [compose](#compose)
+- [transduce](#transduce)
+- [sequence](#sequence)
+
 ## map
 ### syntax
 
