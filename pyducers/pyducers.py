@@ -40,3 +40,10 @@ def pyducers_map(f, *args):
         return map(f, args[0])
 
     return map(lambda x: f(*x), zip(*args))
+
+
+def compose(*args):
+    def compose_two(f, g):
+        return lambda *x: f(g(*x))
+
+    return functools.reduce(compose_two, args, lambda x: x)
