@@ -157,7 +157,7 @@ transduce(transducer, reduce_function, coll, initial_value=None)
 
 Without transducer, `sequence` simply transforms collection into a list.
 ```python
-sequence(coll, f=None)
+sequence(coll, xf=None)
 ```
 
 ### examples
