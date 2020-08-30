@@ -42,3 +42,13 @@ def test_compose():
 
     assert 5 == compose(inc, square, two_times)(1)
     assert 8 == compose(two_times, square, inc)(1)
+
+    assert 2*2 + 4*4 == transduce(compose(map(square), filter(evenp)),
+                                  add, [1, 2, 3, 4], 0)
+
+
+def test_tranduce_compose_order():
+    assert 20 == transduce(compose(map(two_times), filter(evenp)), add,
+                           [1, 2, 3, 4], 0)
+    assert 12 == transduce(compose(filter(evenp), map(two_times)), add,
+                           [1, 2, 3, 4], 0)
