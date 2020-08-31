@@ -6,7 +6,7 @@ with open("VERSION", "r") as fh:
     version = fh.read()
 
 setuptools.setup(
-    name="pyducers-furiel",
+    name="pyducers",
     version=version,
     author="furiel",
     author_email="antal.nemes@gmail.com",
