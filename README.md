@@ -1,3 +1,5 @@
+![Python application](https://github.com/furiel/pyducers/workflows/Python%20application/badge.svg)
+
 # pyducers
 Transducer library for python, inspired by clojure
 
