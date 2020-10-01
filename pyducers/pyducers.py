@@ -23,12 +23,7 @@ def pyducers_filter(f, coll=None):
         return filter(f, coll)
 
     def transducer(rf):
-        def filter_reduce(acc=None, current=None):
-            if acc is None:
-                return rf()
-            if current is None:
-                return rf(acc)
-
+        def filter_reduce(acc, current):
             if f(current):
                 return rf(acc, current)
             else:
